@@ -1,19 +1,19 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Testimonials from './components/Testimonials';
-import Footer from './components/Footer';
-import AppShowcase from './components/AppShowcase';
-import LogoPage from './components/LogoPage';
-import CTA from './components/CTA';
-import ProductShowcase from './components/ProductShowcase';
-import Flows from './components/Flows';
-import Creation from './components/Creation';
+import Header from './components/layout/Header';
+import Hero from './components/sections/Hero';
+import ProductShowcase from './components/sections/ProductShowcase';
+import AppShowcase from './components/sections/AppShowcase';
+import Flows from './components/sections/Flows';
+import Creation from './components/sections/Creation';
+import Testimonials from './components/sections/Testimonials';
+import CTA from './components/sections/CTA';
+import LogoPage from './components/sections/LogoPage';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <div className="relative z-10">
+    <div className="min-h-screen bg-white">
+      {/* <div className="relative z-10"> */}
         <Header />
         <Hero />
         <ProductShowcase />
@@ -23,9 +23,9 @@ function App() {
         <Testimonials />
         <CTA />
         <div className='bg-black'>
-        <LogoPage />
+          <LogoPage />
         </div>
-      </div>
+      {/* </div> */}
       <Footer />
     </div>
   );

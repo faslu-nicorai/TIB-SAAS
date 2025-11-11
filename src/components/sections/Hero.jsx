@@ -33,7 +33,7 @@ const Hero = () => {
     const currentColor = techLogos[index].color;
 
     return (
-        <section id="hero" className="bg-white py-20 md:py-20">
+        <section id="hero" className="bg-white py-20 md:py-20 relative z-10">
             <motion.div
                 className="container mx-auto px-4 flex flex-col items-center text-center"
                 

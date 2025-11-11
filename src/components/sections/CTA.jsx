@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const CTA = () => {
     return (
-        <section id="cta" className="py-8 bg-white">
+        <section id="cta" className="py-8 bg-white relative z-10">
             <div className="container mx-auto px-4 flex flex-col items-center text-center">
 
                 <h2 className="text-5xl md:text-5xl font-extrabold text-[#141414] leading-tight max-w-2xl">

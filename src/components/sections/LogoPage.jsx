@@ -61,7 +61,7 @@
 
 
 import React from 'react'
-import LogoLoop from './LogoLoop'
+import LogoLoop from '../ui/LogoUi/LogoLoop'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 
 const techLogos = [
@@ -75,7 +75,7 @@ function LogoPage() {
     return (
         <section 
             id="logo-page" 
-            className="py-20 overflow-hidden bg-white rounded-b-[50px]  pb-32"
+            className="py-20 overflow-hidden bg-white rounded-b-[50px]  pb-32 relative z-10"
         >
             <LogoLoop 
                 logos={techLogos}

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import workspace from '../assets/workspace.png';
-import dashboard from '../assets/dashboard.png';
-import client from '../assets/client.png';
+import workspace from '../../assets/workspace.png';
+import dashboard from '../../assets/dashboard.png';
+import client from '../../assets/client.png';
 
 // --- Mock content ---
 const productScreens = [
@@ -34,7 +34,7 @@ const ProductShowcase = () => {
     }, []);
 
     return (
-        <section id="product-showcase" className="py-6 bg-white">
+        <section id="product-showcase" className="py-6 bg-white relative z-10">
             <motion.div
                 className="container mx-auto px-4"
 

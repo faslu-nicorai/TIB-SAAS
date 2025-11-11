@@ -1,6 +1,6 @@
-import React from 'react';
-import TestimonialCard from './cards/TestimonialCard';
-import nicorai from '../assets/nicorai.png';
+import React, { useEffect, useState } from 'react';
+import TestimonialCard from '../cards/TestimonialCard';
+import nicorai from '../../assets/nicorai.png';
 
 
 // I've added more testimonials based on your image
@@ -80,28 +80,53 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const [visibleCount, setVisibleCount] = useState(4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth < 768;
+      setVisibleCount(mobile ? 4 : testimonials.length);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
-    // Updated to bg-white
-    <section id="testimonials" className="py-20 px-25 bg-white ">
-      <div className="relative container mx-auto px-4">
-        {/* Updated title to match image */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-[#141414] mb-16">
+  <section id="testimonials" className="py-10 md:py-20 px-4 md:px-25 bg-white relative z-10">
+      <div className="relative container mx-auto">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-[#141414] mb-8 md:mb-16 px-4">
           What our users are saying.
         </h2>
 
-        {/* This creates the masonry/staggered layout */}
-        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
-          {testimonials.map((t, i) => (
+        {/* Mobile view: Simple column layout */}
+        <div className="md:hidden space-y-6 px-4">
+          {testimonials.slice(0, visibleCount).map((t, i) => (
             <TestimonialCard
               key={i}
               name={t.name}
               role={t.role}
               quote={t.quote}
-              imgSrc={t.imgSrc} 
+              imgSrc={t.imgSrc}
             />
           ))}
         </div>
-        <div className="absolute bottom-0 left-0 w-full h-64 bg-linear-to-t from-white to-transparent pointer-events-none" />
+
+        {/* Desktop view: Masonry layout */}
+        <div className="hidden md:block">
+          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6 px-4">
+            {testimonials.slice(0, visibleCount).map((t, i) => (
+              <TestimonialCard
+                key={i}
+                name={t.name}
+                role={t.role}
+                quote={t.quote}
+                imgSrc={t.imgSrc}
+              />
+            ))}
+          </div>
+          <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+        </div>
       </div>
     </section>
   );

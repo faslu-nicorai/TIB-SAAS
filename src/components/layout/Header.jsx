@@ -44,7 +44,7 @@ const Header = () => {
                 {!isMobile && (
                     <nav className="navbar-links">
                         <Button variant="ghost" asChild>
-                            <a href="#pricing">Pricing</a>
+                            <a href="/pricing">Pricing</a>
                         </Button>
 
                         <Button variant="ghost" asChild>

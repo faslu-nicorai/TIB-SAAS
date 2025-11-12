@@ -20,7 +20,10 @@ const PricingHeader = () => {
             <div className="flex flex-col lg:hidden">
                 {/* Top Row (Logo + Search + Menu) */}
                 <div className="flex items-center justify-between px-4 py-2">
+                    <a href="/">
                     <Logo />
+                    </a>
+
                     <div className="flex-1 mx-3 max-w-md">
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

@@ -37,7 +37,7 @@ const Header = () => {
             <div className="navbar-container">
                 {/* Logo */}
                 <div className="navbar-logo">
-                    <span className="brand-text">TIB</span>
+                    <a href="/" className="brand-text">TIB</a>
                 </div>
 
                 {/* Desktop Nav Links */}
@@ -147,7 +147,7 @@ const Header = () => {
                             asChild
                             className="bg-[#141414] text-white hover:bg-gray-600 rounded-full px-6"
                         >
-                            <a href="#join" onClick={() => setMenuOpen(false)}>Join for free</a>
+                            <a href="#join" onClick={() => setMenuOpen(false)}>Get started free</a>
                         </Button>
                     </motion.nav>
                 )}

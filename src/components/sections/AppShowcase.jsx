@@ -9,7 +9,7 @@ const AppShowcase = () => {
     // --- 3. Set up a ref for the section ---
     const trackRef = useRef(null);
 
-    const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
 
     // --- 4. Track scroll progress for the section ---

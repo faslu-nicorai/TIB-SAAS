@@ -28,37 +28,37 @@ import { PricingToggle } from "@/components/ui/pricingPageUi/pricingToggle"; // 
 // The data now matches your image exactly, including icons.
 const plans = [
     {
-        name: "Pro",
-        popular: true,
-        description: "For individuals & freelancers",
-        price: "₹1,200",
-        billing: "per month billed quarterly",
+        name: "Monthly",
+        popular: false,
+        description: "Per user, billed monthly",
+        price: "AED 99",
+        billing: "per user/month",
         cta: "Get started",
         features: [
-            { text: "Unlimited Clients & Projects", icon: Bookmark },
+            { text: "All Core Features", icon: Check }, // Renamed for clarity
+            { text: "Priority Support", icon: Headphones }, 
             { text: "Order & Invoice Management", icon: FileText },
             { text: "Client Database", icon: Users },
-            { text: "Basic Analytics Dashboard", icon: BarChart2 },
-            { text: "1 User Seat", icon: User },
+            { text: "Analytics Dashboard", icon: BarChart2 },
+            { text: "Team Roles & Permissions", icon: Shield },
             { text: "Email & Chat Support", icon: MessageSquare },
-            { text: "...and more", icon: null, special: true }, // Special case for the link
         ],
     },
     {
-        name: "Team",
-        popular: false,
-        description: "For teams & agencies",
-        price: "₹1,440",
-        billing: "per member/month billed quarterly",
+        name: "Yearly",
+        popular: true,
+        description: "Save over 49%!", // 99*12 = 1188. 599/1188 is ~49.6% savings.
+        price: "AED 599",
+        billing: "per user/year",
         cta: "Get started",
         features: [
-            { text: "All Pro features", icon: Check },
-            { text: "Shared Client Database", icon: Users },
+            { text: "All Core Features", icon: Check },
+            { text: "Order & Invoice Management", icon: FileText },
+            { text: "Client Database", icon: Users },
+            { text: "Analytics Dashboard", icon: BarChart2 },
             { text: "Team Roles & Permissions", icon: Shield },
-            { text: "Advanced Admin Tools", icon: Settings },
-            { text: "Centralized Billing", icon: CreditCard },
-            { text: "Priority Support", icon: Headphones },
-            { text: "Per-Seat Pricing", icon: Users },
+            { text: "Email & Chat Support", icon: MessageSquare },
+            { text: "Priority Support", icon: Headphones }, // Added Priority support as a yearly perk
         ],
     },
 ];
@@ -90,7 +90,7 @@ export function PricingSection() {
                     {plans.map((plan) => (
                         <Card
                             key={plan.name}
-                            className={`flex flex-col rounded-2xl p-6 ${plan.name === "Pro"
+                            className={`flex flex-col rounded-2xl p-6 ${plan.name === "Yearly"
                                 ? "bg-[#F2F2F2] border-transparent" // Gray background for Pro
                                 : "bg-white border-gray-200 border" // White background with border for Team
                                 } ${plan.popular ? "shadow-lg" : ""}`}

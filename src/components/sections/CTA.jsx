@@ -21,7 +21,7 @@ const CTA = () => {
                     </Button>
 
                     <Button size="lg" variant="outline" asChild className="rounded-full hover:bg-[#f6f6f6]">
-                        <a href="#plans" className="flex items-center gap-2">
+                        <a href="/pricing" className="flex items-center gap-2">
                             See our plans
                             <ArrowRight className="h-5 w-5" />
                         </a>

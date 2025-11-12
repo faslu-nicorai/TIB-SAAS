@@ -103,7 +103,7 @@ const Header = () => {
                             <a href="#changelog" onClick={() => setMenuOpen(false)}>Changelog</a>
                         </Button>
                         <Button variant="ghost" asChild>
-                            <a href="#pricing" onClick={() => setMenuOpen(false)}>Pricing</a>
+                            <a href="/pricing" onClick={() => setMenuOpen(false)}>Pricing</a>
                         </Button>
                         <Button variant="ghost" asChild>
                             <a href="#careers" onClick={() => setMenuOpen(false)}>Careers</a>

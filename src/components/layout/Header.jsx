@@ -37,7 +37,7 @@ const Header = () => {
             <div className="navbar-container">
                 {/* Logo */}
                 <div className="navbar-logo">
-                    <a href="/" className="brand-text">TIB</a>
+                    <a href="/" className="text-3xl font-bold">tib</a>
                 </div>
 
                 {/* Desktop Nav Links */}

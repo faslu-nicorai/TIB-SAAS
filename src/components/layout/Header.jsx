@@ -26,7 +26,7 @@ const Header = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
-        handleScroll(); // run once in case page already scrolled
+        handleScroll();
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -74,31 +74,56 @@ const Header = () => {
                     </nav>
                 )}
 
-                {/* Mobile hamburger */}
+                {/* Mobile hamburger with Framer Motion */}
                 {isMobile && (
                     <button
-                        className={`hamburger ${menuOpen ? "active" : ""}`}
+                        className="hamburger"
                         aria-label="Menu"
                         onClick={() => setMenuOpen(!menuOpen)}
                     >
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <motion.span
+                            animate={menuOpen ? {
+                                rotate: 45,
+                                y: 7
+                            } : {
+                                rotate: 0,
+                                y: 0
+                            }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                        />
+                        <motion.span
+                            animate={menuOpen ? {
+                                opacity: 0
+                            } : {
+                                opacity: 1
+                            }}
+                            transition={{ duration: 0.2 }}
+                        />
+                        <motion.span
+                            animate={menuOpen ? {
+                                rotate: -45,
+                                y: -7
+                            } : {
+                                rotate: 0,
+                                y: 0
+                            }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                        />
                     </button>
                 )}
             </div>
 
-            {/* Mobile Expanded Menu */}
+            {/* Mobile Expanded Menu - Framer Motion Animation */}
             <AnimatePresence>
                 {isMobile && menuOpen && (
                     <motion.nav
                         className="navbar-links-expanded"
-                        initial={{ opacity: 0, scaleY: 0.8, transformOrigin: "top" }}
-                        animate={{ opacity: 1, scaleY: 1 }}
-                        exit={{ opacity: 0, scaleY: 0.8 }}
-                        transition={{ duration: 0.2, ease: "easeInOut" }}
+                        initial={{ opacity: 0, y: -20, x: "-50%" }}
+                        animate={{ opacity: 1, y: 0, x: "-50%" }}
+                        exit={{ opacity: 0, y: -20, x: "-50%" }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        style={{ left: "50%" }}
                     >
-                        {/* === LINKS FROM THE VIDEO === */}
                         <Button variant="ghost" asChild>
                             <a href="#changelog" onClick={() => setMenuOpen(false)}>Changelog</a>
                         </Button>
@@ -121,12 +146,12 @@ const Header = () => {
                         <Button
                             asChild
                             className="bg-[#141414] text-white hover:bg-gray-600 rounded-full px-6"
-                            s                       >
+                        >
                             <a href="#join" onClick={() => setMenuOpen(false)}>Join for free</a>
                         </Button>
                     </motion.nav>
                 )}
-                t       </AnimatePresence>
+            </AnimatePresence>
         </header>
     );
 };

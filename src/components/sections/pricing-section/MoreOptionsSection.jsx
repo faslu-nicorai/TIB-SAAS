@@ -1,49 +1,51 @@
 import React from "react";
 import {
     Building2,
-    GraduationCap,
-    Dices,
+    Database,
+    Rocket,
 } from "lucide-react";
 
 import { MoreOptionsCard } from "@/components/ui/pricingPageUi/MoreOptionsCard";
 
 export function MoreOptionsSection() {
-    const options = [
-        {
-            icon: Building2,
-            title: "Enterprise",
-            description: (
-                <>
-                    Get advanced security (SOC 2 reports), priority support, standard
-                    legal agreement & more.
-                </>
-            ),
-            linkText: "Contact Sales",
-            linkHref: "#", // Replace with actual link
-        },
-        {
-            icon: GraduationCap,
-            title: "Student or educator?",
-            description: (
-                <>
-                    Discover Mobbin for Education and get a discount if you're eligible.
-                </>
-            ),
-            linkText: "Read more",
-            linkHref: "#", // Replace with actual link
-        },
-        {
-            icon: Dices, // Using Dices as a placeholder
-            title: "Competitor research",
-            description: (
-                <>
-                    We'll map out any app of your choice. From $3,999 per app.
-                </>
-            ),
-            linkText: "Read more",
-            linkHref: "#", // Replace with actual link
-        },
-    ];
+const options = [
+    {
+        icon: Building2, // Icon for Enterprise
+        title: "Enterprise",
+        description: (
+            <>
+                Get advanced security, custom integrations, priority support, 
+                and a dedicated account manager.
+            </>
+        ),
+        linkText: "Contact Sales",
+        linkHref: "#", // Replace with actual link
+    },
+    {
+        icon: Rocket, // Replaced GraduationCap with Rocket for Startups
+        title: "Startups",
+        description: (
+            <>
+                Discover our special program for new businesses 
+                and get a discount if you're eligible.
+            </>
+        ),
+        linkText: "Read more",
+        linkHref: "#", // Replace with actual link
+    },
+    {
+        icon: Database, // Replaced Dices with Database for Data Migration
+        title: "Data Migration",
+        description: (
+            <>
+                We'll help move your existing client and order data 
+                into `tib` for a seamless transition.
+            </>
+        ),
+        linkText: "Read more",
+        linkHref: "#", // Replace with actual link
+    },
+];
 
     return (
 

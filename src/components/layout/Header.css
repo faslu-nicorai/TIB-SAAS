@@ -5,13 +5,6 @@
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  background: rgba(242, 242, 242, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 60px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15),
-              0 4px 12px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 20px;
   z-index: 999;
@@ -19,32 +12,19 @@
   transition: all 0.3s ease;
 }
 
-/* ===== MOBILE EXPANDED MENU ===== */
-.navbar-links-expanded {
+/* Navbar inner glass effect */
+.navbar::before {
+  content: '';
   position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  right: 0;
-  width: 90%;
-  margin: 0 auto;
-  padding: 18px 0;
-  border-radius: 25px;
-
-  /* Perfect glass match with navbar */
+  inset: 0;
   background: rgba(242, 242, 242, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border-radius: 60px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15),
-              0 4px 12px rgba(0, 0, 0, 0.05);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  overflow: hidden;
-  z-index: 998;
-  transition: all 0.3s ease-in-out;
+    0 4px 12px rgba(0, 0, 0, 0.05);
+  z-index: -1;
 }
 
 /* Container */
@@ -54,6 +34,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== LOGO ===== */
@@ -77,6 +59,43 @@
   gap: 12px;
 }
 
+/* ===== MOBILE EXPANDED MENU ===== */
+.navbar-links-expanded {
+  position: fixed;
+  top: calc(20px + 55px + 0px);
+  left: 50%;
+  width: 90%;
+  max-width: 400px;
+  padding: 18px 0;
+  z-index: 998;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Glass effect for menu */
+.navbar-links-expanded::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(242, 242, 242, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+  z-index: -1;
+}
+
+/* Menu content needs to be above the pseudo-element */
+.navbar-links-expanded>* {
+  position: relative;
+  z-index: 1;
+}
+
 /* ===== HAMBURGER ===== */
 .hamburger {
   display: none;
@@ -88,24 +107,15 @@
   border: none;
   cursor: pointer;
   z-index: 1001;
+  padding: 0;
 }
 
 .hamburger span {
   display: block;
   height: 2px;
+  width: 100%;
   background: #111;
   border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(3px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(3px, -5px);
 }
 
 /* ===== RESPONSIVE BEHAVIOR ===== */
@@ -126,10 +136,19 @@
   }
 
   .navbar-links {
-    display: none; /* Hide desktop links */
+    display: none;
   }
 
-.navbar-links-expanded {
-    width: 100%; 
+  .navbar-links-expanded {
+    width: 100%;
+  }
+}
+
+/* ===== FALLBACK FOR BROWSERS WITHOUT BACKDROP-FILTER ===== */
+@supports not (backdrop-filter: blur(12px)) {
+
+  .navbar::before,
+  .navbar-links-expanded::before {
+    background: rgba(242, 242, 242, 0.95);
   }
 }

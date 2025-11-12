@@ -89,7 +89,7 @@ const Hero = () => {
                     </Button>
 
                     <Button size="lg" variant="outline" asChild className="rounded-full hover:bg-[#f6f6f6]">
-                        <a href="#plans" className="flex items-center gap-2 pl-6 pr-3">
+                        <a href="/pricing" className="flex items-center gap-2 pl-6 pr-3">
                             View pricing
                             <span className="bg-[#f0f0f0] rounded-full flex items-center justify-center w-8 h-8 ">
                                 <ArrowRight className="h-5 w-5" />

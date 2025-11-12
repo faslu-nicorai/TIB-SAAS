@@ -5,24 +5,22 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"; // Corrected path
 import { Badge } from "@/components/ui/badge"; // Corrected path
 import {
     Check,
-    Lock,
     Headphones,
     Bookmark,
-    EyeOff,
-    Download,
-    History,
     MessageSquare,
     Settings,
     CreditCard,
     Users,
     FileText,
+    BarChart2,
+    User,
+    Shield,
 } from "lucide-react"; // Import all needed icons
 import { PricingToggle } from "@/components/ui/pricingPageUi/pricingToggle"; // Corrected path
 
@@ -32,17 +30,17 @@ const plans = [
     {
         name: "Pro",
         popular: true,
-        description: "For individuals",
+        description: "For individuals & freelancers",
         price: "₹1,200",
         billing: "per month billed quarterly",
         cta: "Get started",
         features: [
-            { text: "Browse all apps & sites", icon: Lock },
-            { text: "Browse flows", icon: Headphones },
-            { text: "Unlimited collections", icon: Bookmark },
-            { text: "Hide screen footers", icon: EyeOff },
-            { text: "Download multiple screens", icon: Download },
-            { text: "App history", icon: History },
+            { text: "Unlimited Clients & Projects", icon: Bookmark },
+            { text: "Order & Invoice Management", icon: FileText },
+            { text: "Client Database", icon: Users },
+            { text: "Basic Analytics Dashboard", icon: BarChart2 },
+            { text: "1 User Seat", icon: User },
+            { text: "Email & Chat Support", icon: MessageSquare },
             { text: "...and more", icon: null, special: true }, // Special case for the link
         ],
     },
@@ -55,12 +53,12 @@ const plans = [
         cta: "Get started",
         features: [
             { text: "All Pro features", icon: Check },
-            { text: "Team collections", icon: Bookmark },
-            { text: "Comments & mentions", icon: MessageSquare },
-            { text: "Admin tools", icon: Settings },
-            { text: "Centralized billing", icon: CreditCard },
-            { text: "Seat-based pricing", icon: Users },
-            { text: "SOC 2 reports", icon: FileText },
+            { text: "Shared Client Database", icon: Users },
+            { text: "Team Roles & Permissions", icon: Shield },
+            { text: "Advanced Admin Tools", icon: Settings },
+            { text: "Centralized Billing", icon: CreditCard },
+            { text: "Priority Support", icon: Headphones },
+            { text: "Per-Seat Pricing", icon: Users },
         ],
     },
 ];
@@ -72,16 +70,16 @@ export function PricingSection() {
                 {/* Header (Unchanged) */}
                 <div className="text-center mb-12">
                     <h2 className="text-5xl font-extrabold tracking-tight sm:text-6xl mb-4">
-                        Design like a Pro.
+                        Grow like a Pro.
                     </h2>
                     <p className="text-lg font-medium text-muted-foreground max-w-2xl mx-auto mb-6 leading-tight">
-                        Get full access to all apps & features{' '}
+                        Get full access to all features{' '}
                         <span className="md:hidden block whitespace-pre-wrap">
-                            from only ₹26.30 per day —
+                            from only ₹40 per day —
                             <span className="block text-center mt-1">Cancel anytime.</span>
                         </span>
                         <span className="hidden md:inline">
-                            from only ₹26.30 per day — Cancel anytime
+                            from only ₹40 per day — Cancel anytime.
                         </span>
                     </p>
                     <PricingToggle />

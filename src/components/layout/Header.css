@@ -56,7 +56,7 @@
 /* ===== MOBILE EXPANDED MENU ===== */
 .navbar-links-expanded {
   position: fixed;
-  top: calc(20px + 55px + 0px);
+  top: calc(20px + 55px + 5px);
   left: 50%;
   width: 90%;
   max-width: 400px;

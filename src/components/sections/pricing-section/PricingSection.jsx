@@ -12,10 +12,7 @@ import { Badge } from "@/components/ui/badge"; // Corrected path
 import {
     Check,
     Headphones,
-    Bookmark,
     MessageSquare,
-    Settings,
-    CreditCard,
     Users,
     FileText,
     BarChart2,

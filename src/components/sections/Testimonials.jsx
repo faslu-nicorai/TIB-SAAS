@@ -24,7 +24,7 @@ const testimonials = [
     quote: "tib is a game-changer for founders. I finally have a real-time dashboard for all our core metrics—clients, orders, and revenue. We stopped managing the chaos and started making smart decisions."
   },
   {
-    name:"David Lee",
+    name: "David Lee",
     role: "Finance Director, Creative Labs",
     imgSrc: nicorai,
     quote: "I love having all client data, project hours, and billing in one unified system. tib has streamlined our invoicing, reduced errors, and helped us get paid 20% faster. It's indispensable."
@@ -84,8 +84,10 @@ const Testimonials = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const mobile = window.innerWidth < 768;
-      setVisibleCount(mobile ? 4 : testimonials.length);
+      const w = window.innerWidth;
+      if (w < 768) setVisibleCount(4);           // mobile
+      else if (w < 1024) setVisibleCount(6);     // tablet
+      else setVisibleCount(testimonials.length); // desktop
     };
 
     handleResize();
@@ -93,7 +95,7 @@ const Testimonials = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   return (
-  <section id="testimonials" className="py-10 md:py-20 px-4 md:px-25 bg-white relative z-10">
+    <section id="testimonials" className="py-10 md:py-20 px-4 md:px-25 bg-white relative z-10">
       <div className="relative container mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-[#141414] mb-8 md:mb-16 px-4">
           What our users are saying.

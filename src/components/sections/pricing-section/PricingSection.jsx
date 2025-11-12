@@ -75,11 +75,11 @@ export function PricingSection() {
                     <p className="text-lg font-medium text-muted-foreground max-w-2xl mx-auto mb-6 leading-tight">
                         Get full access to all features{' '}
                         <span className="md:hidden block whitespace-pre-wrap">
-                            from only ₹40 per day —
+                            from only AED 9.99 per day —
                             <span className="block text-center mt-1">Cancel anytime.</span>
                         </span>
                         <span className="hidden md:inline">
-                            from only ₹40 per day — Cancel anytime.
+                            from only AED 9.99 per day — Cancel anytime.
                         </span>
                     </p>
                     <PricingToggle />

@@ -6,8 +6,8 @@ export const FeatureCard = ({ title, description, children }) => (
         <div className="mb-4 md:mb-6">
             {children}
         </div>
-        <h3 className="text-xl font-bold text-[black] mb-2">{title}</h3>
-        <p className="text-[#707070] text-base leading-relaxed">
+        <h3 className="text-xl font-bold text-[black] ps-4 mb-2">{title}</h3>
+        <p className="text-[#707070] text-base leading-relaxed ps-4">
             {description}
         </p>
     </div>

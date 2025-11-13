@@ -2,50 +2,50 @@ import React from "react";
 import {
     Building2,
     Database,
+    FileCheck,
     Rocket,
 } from "lucide-react";
 
 import { MoreOptionsCard } from "@/components/ui/pricingPageUi/MoreOptionsCard";
 
 export function MoreOptionsSection() {
-const options = [
-    {
-        icon: Building2, // Icon for Enterprise
-        title: "Enterprise",
-        description: (
-            <>
-                Get advanced security, custom integrations, priority support, 
-                and a dedicated account manager.
-            </>
-        ),
-        linkText: "Contact Sales",
-        linkHref: "#", // Replace with actual link
-    },
-    {
-        icon: Rocket, // Replaced GraduationCap with Rocket for Startups
-        title: "Startups",
-        description: (
-            <>
-                Discover our special program for new businesses 
-                and get a discount if you're eligible.
-            </>
-        ),
-        linkText: "Read more",
-        linkHref: "#", // Replace with actual link
-    },
-    {
-        icon: Database, // Replaced Dices with Database for Data Migration
-        title: "Data Migration",
-        description: (
-            <>
-                We'll help move your existing client and order data 
-                into `tib` for a seamless transition.
-            </>
-        ),
-        linkText: "Read more",
-        linkHref: "#", // Replace with actual link
-    },
-];
+    const options = [
+        {
+            icon: Building2, // Icon for Enterprise
+            title: "Enterprise",
+            description: (
+                <>
+                    Get advanced security, custom integrations, priority support,
+                    and a dedicated account manager.
+                </>
+            ),
+            linkText: "Contact Sales",
+            linkHref: "#", // Replace with actual link
+        },
+        {
+            icon: Rocket, // Replaced GraduationCap with Rocket for Startups
+            title: "Startups",
+            description: (
+                <>
+                    Discover our special program for new businesses
+                    and get a discount if you're eligible.
+                </>
+            ),
+            linkText: "Read more",
+            linkHref: "#", // Replace with actual link
+        },
+        {
+            icon: FileCheck, // Replaced Dices with Database for Data Migration
+            title: "Certificate Management",
+            description: (
+                <>
+                    Issue and oversee certification tasks with tools crafted to simplify your workflow and daily needs.
+                </>
+            ),
+            linkText: "Read more",
+            linkHref: "#", // Replace with actual link
+        },
+    ];
 
     return (
 

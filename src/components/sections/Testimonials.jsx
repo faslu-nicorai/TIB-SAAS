@@ -41,42 +41,6 @@ const testimonials = [
     imgSrc: nicorai,
     quote: "I finally deleted that folder of 1,500 unorganized invoices and client notes. I haven't looked back since. Shoutout to the tib team for building the tool we actually needed."
   },
-  {
-    name: "Kevin Chung",
-    role: "Lead Developer, Sparklight",
-    imgSrc: nicorai,
-    quote: "As a developer, I appreciate how clean and fast tib is. As a manager, I love that my entire team is finally on the same page. No more 'Where is that file?' or 'What's the status on this?'"
-  },
-  {
-    name: "Maria Gomez",
-    role: "E-commerce Manager",
-    imgSrc: nicorai,
-    quote: "Our inventory management was a nightmare. tib connected directly to our store and automated all our order processing. We're handling 3x the volume with the same size team."
-  },
-  {
-    name: "Tom Iwata",
-    role: "Freelance Designer",
-    imgSrc: nicorai,
-    quote: "tib is one of those tools I never close. It manages my client proposals, project tracking, and invoicing. It's the 'CEO' of my one-person business, so I can just focus on design."
-  },
-  {
-    name: "Jasmine Kaur",
-    role: "Operations, QuickMove",
-    imgSrc: nicorai,
-    quote: "The quality and clarity tib provides is unmatched. We can see our entire operations at a glance. It's just as valuable as it is intuitive, and our team adopted it in less than a day."
-  },
-  {
-    name: "Alex Johnson",
-    role: "Proprietor, The Local Roast",
-    imgSrc: nicorai,
-    quote: "I used to spend my Sundays doing payroll and invoices. With tib, it's a 10-minute task. The reporting features also showed me my most profitable items, which was a complete surprise!"
-  },
-  {
-    name: "Ryan Higa",
-    role: "Consultant, Higa Strategy",
-    imgSrc: nicorai,
-    quote: "This is the app I've been trying to build with spreadsheets for years. tib just works. Client onboarding is smooth, and tracking project value is effortless. I highly recommend it."
-  },
 ];
 
 const Testimonials = () => {
@@ -116,7 +80,7 @@ const Testimonials = () => {
 
         {/* Desktop view: Masonry layout */}
         <div className="hidden md:block">
-          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6 px-4">
+          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-3 gap-6 space-y-6 px-4">
             {testimonials.slice(0, visibleCount).map((t, i) => (
               <TestimonialCard
                 key={i}

@@ -24,38 +24,6 @@ const Header = () => {
     }, []);
 
     // Position the popover under the hamburger for tablet only
-    // useEffect(() => {
-    //     if (!menuOpen || !isTablet || !hamburgerRef.current) {
-    //         setMenuStyle({});
-    //         return;
-    //     }
-
-    //     const updatePosition = () => {
-    //         const btnRect = hamburgerRef.current.getBoundingClientRect();
-    //         const desiredWidth = 300; // adjust as needed
-    //         const left = Math.min(
-    //             Math.max(8, btnRect.right - desiredWidth + 8),
-    //             window.innerWidth - desiredWidth - 8
-    //         );
-    //         const top = btnRect.bottom + 25; // gap below button
-    //         setMenuStyle({
-    //             left: `${Math.round(left)}px`,
-    //             top: `${Math.round(top)}px`,
-    //             width: `${desiredWidth}px`,
-    //         });
-    //     };
-
-    //     updatePosition();
-    //     window.addEventListener("resize", updatePosition);
-    //     window.addEventListener("scroll", updatePosition, { passive: true });
-
-    //     return () => {
-    //         window.removeEventListener("resize", updatePosition);
-    //         window.removeEventListener("scroll", updatePosition);
-    //     };
-    // }, [menuOpen, isTablet]);
-
-    // Position the popover under the hamburger for tablet only
     useLayoutEffect(() => {
         // If it's not a tablet, always clear the custom styles.
         if (!isTablet) {
@@ -101,19 +69,19 @@ const Header = () => {
 
 
     // Show join button when product section scrolls into view (unchanged)
-    useEffect(() => {
-        const handleScroll = () => {
-            const featuresSection = document.getElementById("product-showcase");
-            if (!featuresSection) return;
-            const rect = featuresSection.getBoundingClientRect();
-            const isVisible = rect.top <= window.innerHeight * 0.6;
-            setShowJoinBtn(isVisible);
-        };
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const featuresSection = document.getElementById("product-showcase");
+    //         if (!featuresSection) return;
+    //         const rect = featuresSection.getBoundingClientRect();
+    //         const isVisible = rect.top <= window.innerHeight * 0.6;
+    //         setShowJoinBtn(isVisible);
+    //     };
 
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    //     window.addEventListener("scroll", handleScroll);
+    //     handleScroll();
+    //     return () => window.removeEventListener("scroll", handleScroll);
+    // }, []);
 
     const motionTransition = { duration: 0.28, ease: "easeInOut" };
 
@@ -126,7 +94,7 @@ const Header = () => {
                 {/* Logo */}
                 <div className="navbar-logo">
                     <a href="/" className="text-3xl font-bold">
-                        tib
+                        Inspektra
                     </a>
                 </div>
 
@@ -141,7 +109,7 @@ const Header = () => {
                             <a href="#login">Log in</a>
                         </Button>
 
-                        <AnimatePresence>
+                        {/* <AnimatePresence>
                             {showJoinBtn && (
                                 <motion.div
                                     key="join-btn"
@@ -155,11 +123,11 @@ const Header = () => {
                                         asChild
                                         className="bg-[#141414] text-white hover:bg-gray-600 rounded-full px-6"
                                     >
-                                        <a href="#join">Get started free</a>
+                                        <a href="#join">Create free account</a>
                                     </Button>
                                 </motion.div>
                             )}
-                        </AnimatePresence>
+                        </AnimatePresence> */}
                     </nav>
                 )}
 

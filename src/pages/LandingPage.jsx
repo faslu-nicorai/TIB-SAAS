@@ -21,9 +21,9 @@ const LandingPage = () => {
       <Flows />
       <Creation />
       <Testimonials />
-      <CTA />
       <div className="bg-black">
-        <LogoSection />
+      <CTA />
+        {/* <LogoSection /> */}
       </div>
       <Footer />
     </div>

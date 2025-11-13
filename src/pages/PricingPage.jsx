@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/Footer'
 import PricingHeader from '@/components/layout/PricingHeader'
+import FaQ from '@/components/sections/pricing-section/FaQ'
 import { MoreOptionsSection } from '@/components/sections/pricing-section/MoreOptionsSection'
 import PricingLogoSection from '@/components/sections/pricing-section/PricingLogoSection'
 import { PricingSection } from '@/components/sections/pricing-section/PricingSection'
@@ -17,6 +18,7 @@ function PricingPage() {
     <PricingSection/>
     <MoreOptionsSection/>
     <PricingLogoSection/>
+    <FaQ/>
     <Footer/>
     </div>
     </>

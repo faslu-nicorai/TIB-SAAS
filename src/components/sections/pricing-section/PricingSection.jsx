@@ -79,7 +79,7 @@ export function PricingSection() {
                             from only AED 9.99 per day — Cancel anytime.
                         </span>
                     </p>
-                    <PricingToggle />
+                    {/* <PricingToggle /> */}
                 </div>
 
                 {/* --- Updated Pricing Cards --- */}

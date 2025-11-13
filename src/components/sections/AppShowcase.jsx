@@ -59,129 +59,43 @@ const AppShowcase = () => {
 
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center w-full">
 
-                        <p className="text-lg text-gray-600 font-medium mb-2">Already powering</p>
+                        <p className="text-lg text-gray-600 font-medium mb-8">Already powering</p>
 
                         <div>
                             {isMobile ? (
                                 <div className='mt-4'>
                                     <h2 className="text-2xl md:text-6xl font-extrabold text-[#141414] mb-2 whitespace-nowrap">
-                                        1,150+ Companies
+                                        2+ Companies
                                     </h2>
                                     <h3 className="text-2xl md:text-6xl font-extrabold text-[#141414] mb-2 whitespace-nowrap">
-                                        550,400+ Orders
+                                        2000+ Orders
                                     </h3>
                                     <p className="text-2xl md:text-6xl font-extrabold text-[#141414] whitespace-nowrap">
-                                        290,500+ Invoices
+                                        1500+ Certificates
                                     </p>
                                 </div>
                             ) : (
                                 <>
                                     <motion.div style={{ opacity: opacity1, y: y1 }}
-                                        className="text-6xl font-extrabold text-[#141414] mb-2">
-                                        1,150+ Companies
+                                        className="text-8xl font-extrabold text-[#141414] mb-2">
+                                        2+ Companies
                                     </motion.div>
                                     <motion.div
-                                        className="text-6xl font-extrabold text-[#141414] mb-2"
+                                        className="text-8xl font-extrabold text-[#141414] mb-2"
                                         style={{ opacity: opacity2, y: y2 }}
                                     >
-                                        550,400+ Orders
+                                        2000+ Orders
                                     </motion.div>
 
                                     <motion.div style={{ opacity: opacity3, y: y3 }}
-                                        className="text-6xl font-extrabold text-[#141414]">
-                                        290,500+ Invoices
+                                        className="text-8xl font-extrabold text-[#141414]">
+                                        1500+ Certificates
                                     </motion.div>
                                 </>
                             )
                             }
                         </div>
                     </div>
-
-
-                    <>
-                        {/* Top Row */}
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 1"
-                            className="absolute top-[15%] -left-[5%] md:top-[5%] md:left-[25%] w-16 h-16 md:w-20 md:h-20 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["-7px", "7px"], y: ["-10px", "10px"] } : {}}
-                            transition={{ ...floatTransition, duration: 4.5, delay: 0.1 }}
-                        />
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 2"
-                            className="absolute top-[12%] right-[15%] md:top-[3%] md:right-[25%] w-12 h-12 md:w-18 md:h-18 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["8px", "-8px"], y: ["-8px", "8px"] } : {}}
-                            transition={{ ...floatTransition, duration: 4.2, delay: 0.5 }}
-                        />
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 3"
-                            className="absolute top-[18%] -right-[5%] md:top-[15%] md:right-[5%] w-14 h-14 md:w-16 md:h-16 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["-6px", "6px"], y: ["-12px", "12px"] } : {}}
-                            transition={{ ...floatTransition, duration: 4.8, delay: 0.3 }}
-                        />
-
-                        {/* Middle Row */}
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 4"
-                            className="absolute top-[35%] -left-[8%] md:top-[30%] md:left-[3%] w-16 h-16 md:w-18 md:h-18 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["9px", "-9px"], y: ["-10px", "10px"] } : {}}
-                            transition={{ ...floatTransition, duration: 4.3, delay: 0.2 }}
-                        />
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 10"
-                            className="absolute top-[30%] left-[20%] md:top-[40%] md:left-[15%] w-14 h-14 md:w-18 md:h-18 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["-5px", "5px"], y: ["-9px", "9px"] } : {}}
-                            transition={{ ...floatTransition, duration: 4.6, delay: 0.7 }}
-                        />
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 5"
-                            className="absolute top-[32%] right-[15%] md:top-[35%] md:right-[10%] w-12 h-12 md:w-20 md:h-20 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["7px", "-7px"], y: ["-11px", "11px"] } : {}}
-                            transition={{ ...floatTransition, duration: 4.7, delay: 0.4 }}
-                        />
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 11"
-                            className="absolute top-[38%] -right-[6%] md:top-[35%] md:right-[10%] w-16 h-16 md:w-20 md:h-20 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["7px", "-7px"], y: ["-11px", "11px"] } : {}}
-                            transition={{ ...floatTransition, duration: 4.7, delay: 0.4 }}
-                        />
-
-                        {/* Bottom Row */}
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 6"
-                            className="absolute bottom-[18%] -left-[6%] md:bottom-[20%] md:left-[15%] w-16 h-16 md:w-16 md:h-16 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["-8px", "8px"], y: ["-12px", "12px"] } : {}}
-                            transition={{ ...floatTransition, duration: 4.9, delay: 0.6 }}
-                        />
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 7"
-                            className="absolute bottom-[12%] left-[20%] md:bottom-[5%] md:left-[30%] w-14 h-14 md:w-20 md:h-20 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["6px", "-6px"], y: ["-8px", "8px"] } : {}}
-                            transition={{ ...floatTransition, duration: 4.1, delay: 0.1 }}
-                        />
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 8"
-                            className="absolute bottom-[15%] right-[25%] md:bottom-[10%] md:right-[3%] w-12 h-12 md:w-18 md:h-18 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["-7px", "7px"], y: ["-10px", "10px"] } : {}}
-                            transition={{ ...floatTransition, duration: 5.0, delay: 0.3 }}
-                        />
-                        <Logo
-                            src={nicorai}
-                            alt="Logo 9"
-                            className="absolute bottom-[10%] -right-[5%] md:bottom-[25%] md:right-[20%] w-14 h-14 md:w-16 md:h-16 object-contain opacity-100"
-                            animate={!isMobile ? { x: ["8px", "-8px"], y: ["-9px", "9px"] } : {}}
-                            transition={{ ...floatTransition, duration: 4.4, delay: 0.8 }}
-                        />
-                    </>
 
                 </div>
             </div>

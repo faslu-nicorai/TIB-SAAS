@@ -4,15 +4,29 @@ import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react"; // Removed AppWindow, wasn't used
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  ClipboardCheck,
+  BarChart3,
+  Users,
+  CalendarCheck,
+} from "lucide-react";
 
-// 1. Import the icons you want to display
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
+// 2. Import the INDUSTRY icons for the "Trusted by" section
+import { Building, Factory, Ship, HardHat } from "lucide-react";
 
-const techLogos = [
-    { component: SiReact, title: "React", href: "https://react.dev", color: "text-blue-500" },
-    { component: SiNextdotjs, title: "Next.js", href: "https://nextjs.org", color: "text-black" },
-    { component: SiTypescript, title: "TypeScript", href: "https://www.typescriptlang.org", color: "text-blue-600" },
-    { component: SiTailwindcss, title: "Tailwind CSS", href: "https://tailwindcss.com", color: "text-cyan-400" },
+
+export const trustedLogos = [
+  { component: Building, title: "Apex Construction" },
+  { component: Factory, title: "Quantum Industries" },
+  { component: Ship, title: "Maritime Logistics" },
+  { component: HardHat, title: "EcoServe Solutions" },
+];
+
+export const featureIcons = [
+  { component: ClipboardCheck, title: "Inspections", color: "text-blue-600" },
+  { component: BarChart3, title: "Reporting", color: "text-green-600" },
+  { component: Users, title: "Client Portals", color: "text-purple-600" },
+  { component: CalendarCheck, title: "Scheduling", color: "text-red-600" },
 ];
 
 const Hero = () => {
@@ -21,7 +35,7 @@ const Hero = () => {
     // 4. Effect to cycle through logos every 2 seconds
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % techLogos.length);
+            setIndex((prevIndex) => (prevIndex + 1) % featureIcons.length);
         }, 2000); // Change logo every 2 seconds
 
         return () => clearInterval(interval); // Cleanup on unmount
@@ -29,8 +43,8 @@ const Hero = () => {
 
     // 5. Get the current logo component and color
     // These lines will now work correctly
-    const CurrentLogo = techLogos[index].component;
-    const currentColor = techLogos[index].color;
+    const CurrentLogo = featureIcons[index].component;
+    const currentColor = featureIcons[index].color;
 
     return (
         <section id="hero" className="bg-white py-20 md:py-20 relative z-10">
@@ -80,12 +94,12 @@ const Hero = () => {
                 </h1>
 
                 <p className="mt-6 text-lg text-gray-600 max-w-2xl">
-                    TIB brings all your clients, projects, and business data into one simple, powerful dashboard.
+                    Inspektra brings all your clients, projects, and business data into one simple, powerful dashboard.
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">
                     <Button size="lg" asChild className="bg-[#141414] text-white hover:bg-gray-500 rounded-full">
-                        <a href="#join">Get started free</a>
+                        <a href="#join">Create free account</a>
                     </Button>
 
                     <Button size="lg" variant="outline" asChild className="rounded-full hover:bg-[#f6f6f6]">
@@ -104,9 +118,9 @@ const Hero = () => {
                 </p>
 
                 {/* 3. Static logo grid (replaces LogoLoop) */}
-                <div className="mt-8 flex flex-wrap justify-center items-center gap-x-8 md:gap-x-12 gap-y-4">
+                <div className="mt-8 flex flex-wrap justify-center items-center gap-x-12 md:gap-x-12 gap-y-4">
                     {/* This part needs to be updated to use the 'component' property too */}
-                    {techLogos.map((logo) => {
+                    {trustedLogos.map((logo) => {
                         const LogoComponent = logo.component; // Get the component
                         return (
                             <a
@@ -119,7 +133,7 @@ const Hero = () => {
                                 aria-label={logo.title}
                             >
                                 {/* Render the component here */}
-                                <LogoComponent className="text-4xl" />
+                                <LogoComponent className="text-5xl" />
                             </a>
                         );
                     })}

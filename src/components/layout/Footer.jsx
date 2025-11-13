@@ -10,11 +10,11 @@ const Footer = () => {
                     <div className="mb-8 md:mb-0">
                         {/* Updated Logo to "tib" text */}
                         <div className="h-8 w-auto mb-4">
-                           <span className="text-3xl font-bold text-white">tib</span>
+                           <span className="text-3xl font-bold text-white">Inspektra</span>
                         </div>
 
-                        <p className="text-[#ADADAD] text-base max-w-xs">
-                            Grow your business smarter with tib.(tib- Technical Inspection Bureau)
+                        <p className="text-[#ADADAD] text-base max-w-s">
+                            Grow your business smarter with Inspektra.
                         </p>
                     </div>
 
@@ -47,7 +47,7 @@ const Footer = () => {
 
                 {/* Bottom Section: Copyright + Legal Links */}
                 <div className="mt-12 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center text-[#ADADAD] text-sm">
-                    <p className="text-sm">© tib 2025</p>
+                    <p className="text-sm">© Inspektra 2025</p>
                     <div className="flex space-x-6 mt-4 sm:mt-0 text-sm">
                         <a href="#" className="hover:text-white transition">Privacy Policy</a>
                         <a href="#" className="hover:text-white transition">Terms</a>

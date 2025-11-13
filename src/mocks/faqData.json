@@ -1,0 +1,50 @@
+[
+  {
+    "question": "What is Inspektra?",
+    "answer": "Inspektra is a complete end-to-end operations platform for inspection, testing, and field-service companies. It replaces manual paperwork, WhatsApp follow-ups, spreadsheets, and disconnected tools by providing one unified system for enquiries, quotations, job scheduling, field inspections, digital report creation, certificate issuance, invoicing, and client communication. Each organization (tenant) gets its own secure workspace with tools for staff, inspectors, and clients."
+  },
+  {
+    "question": "Is Inspektra multi-tenant? How does it work?",
+    "answer": "Yes. Each company using Inspektra gets its own isolated environment, including dedicated dashboards for staff, inspectors, and clients. This ensures data security, role-based access, and complete separation between tenants. For example, TIB is one tenant inside Inspektra’s multi-tenant ecosystem."
+  },
+  {
+    "question": "How often do you release updates?",
+    "answer": "We improve Inspektra continuously. New features, template builder enhancements, bug fixes, and security upgrades are rolled out regularly. All tenants automatically receive the updates without needing any setup."
+  },
+  {
+    "question": "Do you offer onboarding or setup assistance?",
+    "answer": "Yes. We help you set up your templates, import existing client/job data, configure workflows, invite your team, and get your inspectors onboarded. Larger tenants receive priority onboarding support."
+  },
+  {
+    "question": "Do you have discounts for startups or non-profits?",
+    "answer": "Yes, Inspektra offers special pricing for eligible startups, NGOs, and small inspection firms just getting started. You can contact our team to see if you qualify."
+  },
+  {
+    "question": "What payment methods do you support?",
+    "answer": "We support all major credit and debit cards. For annual Enterprise plans, we also accept bank transfers and invoice-based billing."
+  },
+  {
+    "question": "Can I cancel my subscription anytime?",
+    "answer": "Yes. You can cancel anytime directly from your organization's billing page. Your account stays active until the end of your billing cycle, and you won't be charged again."
+  },
+  {
+    "question": "Can I upgrade or downgrade my plan later?",
+    "answer": "Absolutely. Inspektra scales with your business. You can switch plans directly from the Billing page, and your pricing will be automatically adjusted based on usage."
+  },
+  {
+    "question": "What is the difference between the Team and Enterprise plans?",
+    "answer": "The Team plan includes all the core features—client management, quotations, job scheduling, inspector tools, report builder, invoicing, and client portal access. The Enterprise plan adds advanced capabilities like SSO, custom integrations, increased API limits, audit logs, SLAs, and a dedicated account manager."
+  },
+  {
+    "question": "What is your refund policy?",
+    "answer": "Inspektra offers a free trial so you can fully test the product before subscribing. Due to this, subscription payments are non-refundable. If there's a billing mistake, our support team will resolve it promptly."
+  },
+  {
+    "question": "Does Inspektra support custom report templates?",
+    "answer": "Yes. Inspektra includes a powerful drag-and-drop Template Builder that lets you create fully customized inspection forms and certificate layouts. Inspectors fill these templates during on-site work, and the system automatically generates reports and certificates."
+  },
+  {
+    "question": "Can my clients access their data?",
+    "answer": "Yes. Clients get their own secure Client Portal where they can view quotations, track job progress, download certificates, and access invoices anytime."
+  }
+]

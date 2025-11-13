@@ -90,11 +90,11 @@ const Hero = () => {
                 </div>
 
                 <h1 className="text-5xl md:text-6xl font-bold text-[#141414] leading-tight max-w-4xl">
-                    Stop Managing. <br></br>Start Growing.
+                    Inspections.<br></br>Simplified.
                 </h1>
 
-                <p className="mt-6 text-lg text-gray-600 max-w-2xl">
-                    Inspektra brings all your clients, projects, and business data into one simple, powerful dashboard.
+                <p className="mt-6 text-lg text-[#707070] font-medium max-w-2xl">
+                    Manage field jobs, collect evidence, and issue accredited certificates — all from one dashboard.
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">

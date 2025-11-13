@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 const Logo = () => (
 
     <div className="navbar-logo">
-        <a href="/" className="text-3xl font-bold">Inspektra</a>
+        <a href="/" className="text-3xl font-bold">Certive</a>
     </div>
 
 );

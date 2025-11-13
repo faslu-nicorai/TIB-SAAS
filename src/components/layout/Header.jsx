@@ -94,7 +94,7 @@ const Header = () => {
                 {/* Logo */}
                 <div className="navbar-logo">
                     <a href="/" className="text-3xl font-bold">
-                        Inspektra
+                        Certive
                     </a>
                 </div>
 

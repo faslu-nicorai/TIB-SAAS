@@ -4,15 +4,16 @@ import { ArrowRight } from "lucide-react";
 
 const CTA = () => {
     return (
-        <section id="cta" className="py-8 bg-white relative rounded-b-[50px]  pb-32 z-10">
+        <section id="cta" className="py-8 bg-white relative rounded-b-[50px]  pb-20 z-10">
             <div className="container mx-auto px-4 flex flex-col items-center text-center">
 
                 <h2 className="text-5xl md:text-5xl font-extrabold text-[#141414] leading-tight max-w-2xl">
-                    Never miss an order again.
+                    Never lose track of a job again.
                 </h2>
 
                 <p className="mt-6 text-lg text-gray-600 max-w-lg">
-                    Use Inspektra's core features for free or get full access to automated invoicing, analytics, and client management with any of our paid plans.
+                    Stay on top of every enquiry, quotation, inspection, report, and certificate.
+                    Certive keeps your entire workflow organized — so nothing slips through the cracks.
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">

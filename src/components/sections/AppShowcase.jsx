@@ -59,7 +59,7 @@ const AppShowcase = () => {
 
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center w-full">
 
-                        <p className="text-lg text-gray-600 font-medium mb-8">Already powering</p>
+                        <p className="text-3xl text-[black] font-bold mb-8">Already powering</p>
 
                         <div>
                             {isMobile ? (

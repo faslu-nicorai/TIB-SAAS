@@ -10,11 +10,11 @@ const Footer = () => {
                     <div className="mb-8 md:mb-0">
                         {/* Updated Logo to "tib" text */}
                         <div className="h-8 w-auto mb-4">
-                           <span className="text-3xl font-bold text-white">Inspektra</span>
+                           <span className="text-3xl font-bold text-white">Certive</span>
                         </div>
 
                         <p className="text-[#ADADAD] text-base max-w-s">
-                            Grow your business smarter with Inspektra.
+                            Grow your business smarter with Certive.
                         </p>
                     </div>
 
@@ -25,9 +25,9 @@ const Footer = () => {
                             <ul className="space-y-3 text-base">
                                 <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Features</a></li>
                                 <li className="font-semibold"><a href="/pricing" className="hover:text-gray-400 transition">Pricing</a></li>
-                                <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Integrations</a></li>
-                                <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Data Migration</a></li>
-                                <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Book a Demo</a></li>
+                                {/* <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Integrations</a></li> */}
+                                {/* <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Data Migration</a></li> */}
+                                {/* <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Book a Demo</a></li> */}
                             </ul>
                         </div>
 
@@ -36,8 +36,8 @@ const Footer = () => {
                             <ul className="space-y-3 text-base">
                                 <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Contact</a></li>
                                 <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Help Center</a></li>
-                                <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Blog</a></li>
-                                <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Changelog</a></li>
+                                {/* <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Blog</a></li> */}
+                                {/* <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">Changelog</a></li> */}
                                 <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">X (Twitter)</a></li>
                                 <li className="font-semibold"><a href="#" className="hover:text-gray-400 transition">LinkedIn</a></li>
                             </ul>
@@ -47,7 +47,7 @@ const Footer = () => {
 
                 {/* Bottom Section: Copyright + Legal Links */}
                 <div className="mt-12 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center text-[#ADADAD] text-sm">
-                    <p className="text-sm">© Inspektra 2025</p>
+                    <p className="text-sm">© Certive 2025</p>
                     <div className="flex space-x-6 mt-4 sm:mt-0 text-sm">
                         <a href="#" className="hover:text-white transition">Privacy Policy</a>
                         <a href="#" className="hover:text-white transition">Terms</a>

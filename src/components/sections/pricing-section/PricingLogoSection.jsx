@@ -4,8 +4,8 @@ import { techLogos } from '../LogoSection'
 
 const loopLogos = [
   {
-    node: <span className="text-3xl font-bold text-black">TIB Group</span>,
-    title: "TIB Group"
+    node: <span className="text-3xl font-bold text-black">CertiveGroup</span>,
+    title: "CertiveGroup"
   },
 
   {
@@ -109,7 +109,7 @@ function PricingLogoSection() {
                     gap={100}
                     hoverSpeed={0}
                     // scaleOnHover
-                    
+
                     fadeOut
                     fadeOutColor="#ffffff"
                     ariaLabel="Technology partners"

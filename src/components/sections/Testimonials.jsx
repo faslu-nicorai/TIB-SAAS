@@ -9,7 +9,7 @@ const testimonials = [
     name: "Sarah Chen",
     role: "Founder, Artisan Goods",
     imgSrc: nicorai,
-    quote: "tib replaced three different spreadsheets and an invoicing app for me. I've cut my admin time in half and can finally focus on growing my business instead of just managing it."
+    quote: "Certive replaced three different spreadsheets and an invoicing app for me. I've cut my admin time in half and can finally focus on growing my business instead of just managing it."
   },
   {
     name: "Marcus Cole",
@@ -21,13 +21,13 @@ const testimonials = [
     name: "Alisha Khan",
     role: "CEO, Innovate Tech",
     imgSrc: nicorai,
-    quote: "tib is a game-changer for founders. I finally have a real-time dashboard for all our core metrics—clients, orders, and revenue. We stopped managing the chaos and started making smart decisions."
+    quote: "Certive is a game-changer for founders. I finally have a real-time dashboard for all our core metrics—clients, orders, and revenue. We stopped managing the chaos and started making smart decisions."
   },
   {
     name: "David Lee",
     role: "Finance Director, Creative Labs",
     imgSrc: nicorai,
-    quote: "I love having all client data, project hours, and billing in one unified system. tib has streamlined our invoicing, reduced errors, and helped us get paid 20% faster. It's indispensable."
+    quote: "I love having all client data, project hours, and billing in one unified system. Certive has streamlined our invoicing, reduced errors, and helped us get paid 20% faster. It's indispensable."
   },
   {
     name: "Emily Rodriguez",
@@ -39,7 +39,7 @@ const testimonials = [
     name: "James O'Connor",
     role: "Owner, O'Connor Build Co.",
     imgSrc: nicorai,
-    quote: "I finally deleted that folder of 1,500 unorganized invoices and client notes. I haven't looked back since. Shoutout to the tib team for building the tool we actually needed."
+    quote: "I finally deleted that folder of 1,500 unorganized invoices and client notes. I haven't looked back since. Shoutout to the Certive team for building the tool we actually needed."
   },
 ];
 

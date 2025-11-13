@@ -33,7 +33,7 @@ const Creation = () => {
               </div>
             </div>
             <h3 className="text-xl font-bold text-[black] mb-2">Manage Your Clients</h3>
-            <p className="text-[#707070] text-base leading-relaxed max-w-[280px]">
+            <p className="text-[#707070] font-medium text-base leading-relaxed max-w-[280px]">
               Access complete client history, contact details, and order status in one click. No more searching through emails or spreadsheets.
             </p>
           </div>
@@ -54,7 +54,7 @@ const Creation = () => {
               </div>
             </div>
             <h3 className="text-xl font-bold text-[black] mb-2">Automate Your Orders</h3>
-            <p className="text-[#707070] text-base leading-relaxed max-w-[280px]">
+            <p className="text-[#707070] font-medium text-base leading-relaxed max-w-[280px]">
               Create new orders, track their progress from start to finish, and see all related files in a single, unified view.
             </p>
           </div>
@@ -75,7 +75,7 @@ const Creation = () => {
               </div>
             </div>
             <h3 className="text-xl font-bold text-[black] mb-2">Get Paid Faster</h3>
-            <p className="text-[#707070] text-base leading-relaxed max-w-[280px]">
+            <p className="text-[#707070] font-medium text-base leading-relaxed max-w-[280px]">
               Generate and send professional invoices directly from the app. Track payment status in real-time and stop chasing late payments.
             </p>
           </div>

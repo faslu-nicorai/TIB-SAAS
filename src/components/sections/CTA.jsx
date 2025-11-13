@@ -11,7 +11,7 @@ const CTA = () => {
                     Never lose track of a job again.
                 </h2>
 
-                <p className="mt-6 text-lg text-gray-600 max-w-lg">
+                <p className="mt-6 text-lg text-[#707070] font-medium max-w-lg">
                     Stay on top of every enquiry, quotation, inspection, report, and certificate.
                     Certive keeps your entire workflow organized — so nothing slips through the cracks.
                 </p>

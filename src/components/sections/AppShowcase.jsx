@@ -59,23 +59,27 @@ const AppShowcase = () => {
 
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center w-full">
 
-                        <p className="text-3xl text-[black] font-bold mb-8">Already powering</p>
+                        
 
                         <div>
                             {isMobile ? (
+                                <>
+                                <p className="text-lg text-[black] font-bold mb-8">Already powering</p>
                                 <div className='mt-4'>
-                                    <h2 className="text-2xl md:text-6xl font-extrabold text-[#141414] mb-2 whitespace-nowrap">
+                                    <h2 className="text-3xl md:text-6xl font-extrabold text-[#141414] mb-2 whitespace-nowrap">
                                         2+ Companies
                                     </h2>
-                                    <h3 className="text-2xl md:text-6xl font-extrabold text-[#141414] mb-2 whitespace-nowrap">
+                                    <h3 className="text-3xl md:text-6xl font-extrabold text-[#141414] mb-2 whitespace-nowrap">
                                         2000+ Orders
                                     </h3>
-                                    <p className="text-2xl md:text-6xl font-extrabold text-[#141414] whitespace-nowrap">
+                                    <p className="text-3xl md:text-6xl font-extrabold text-[#141414] whitespace-nowrap">
                                         1500+ Certificates
                                     </p>
                                 </div>
+                                </>
                             ) : (
                                 <>
+                                    <p className="text-3xl text-[black] font-bold mb-8">Already powering</p>
                                     <motion.div style={{ opacity: opacity1, y: y1 }}
                                         className="text-8xl font-extrabold text-[#141414] mb-2">
                                         2+ Companies

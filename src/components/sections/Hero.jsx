@@ -90,11 +90,11 @@ const Hero = () => {
                 </div>
 
                 <h1 className="text-5xl md:text-6xl font-bold text-[#141414] leading-tight max-w-4xl">
-                    Inspections.<br></br>Simplified.
+                    From Site to  <br></br>Certificate
                 </h1>
 
                 <p className="mt-6 text-lg text-[#707070] font-medium max-w-2xl">
-                    Manage field jobs, collect evidence, and issue accredited certificates — all from one dashboard.
+                    Certive centralizes inspections, field reports, and certificates so your teams deliver compliant work faster — no paperwork, no rework.
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">

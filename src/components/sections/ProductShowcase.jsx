@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import workspace from '../../assets/workspace.png';
-import dashboard from '../../assets/dashboard.png';
-import client from '../../assets/client.png';
-
+import productOrders from '../../assets/productOrders.png';
+import productTemplate from '../../assets/productTemplate.png';
+import productAnalitics from '../../assets/productAnalitics.png';
 // --- Mock content ---
 const productScreens = [
     {
         id: 1,
-        content: workspace
+        content: productAnalitics
     },
     {
         id: 2,
-        content: dashboard
+        content: productOrders
     },
     {
         id: 3,
-        content: client
+        content: productTemplate
     },
 ];
 
@@ -50,7 +49,7 @@ const ProductShowcase = () => {
             >
 
                 {/* Modern Rounded Container (replaces browser frame) */}
-                <div className="max-w-6xl mx-auto rounded-3xl shadow-lg bg-gray-50 overflow-hidden pt-6 md:pt-16 px-8 md:px-25 pb-0">
+                <div className="max-w-7xl mx-auto rounded-3xl shadow-lg bg-gray-50 overflow-hidden pt-6 md:pt-16 px-8 md:px-25 pb-0">
 
                     {/* Carousel Area */}
                     <div className="relative w-full h-[500px] md:h-[700px] bg-white rounded-tl-xl rounded-tr-xl overflow-hidden">

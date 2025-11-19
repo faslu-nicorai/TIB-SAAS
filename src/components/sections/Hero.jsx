@@ -99,7 +99,7 @@ const Hero = () => {
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">
                     <Button size="lg" asChild className="bg-[#141414] text-white hover:bg-gray-500 rounded-full">
-                        <a href="#join">Create free account</a>
+                        <a href="/signup">Create free account</a>
                     </Button>
 
                     <Button size="lg" variant="outline" asChild className="rounded-full hover:bg-[#f6f6f6]">

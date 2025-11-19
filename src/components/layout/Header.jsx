@@ -106,7 +106,7 @@ const Header = () => {
                         </Button>
 
                         <Button variant="ghost" asChild>
-                            <a href="#login">Log in</a>
+                            <a href="/login">Log in</a>
                         </Button>
 
                         {/* <AnimatePresence>
@@ -193,7 +193,7 @@ const Header = () => {
                             </a>
                         </Button>
                         <Button variant="ghost" asChild>
-                            <a href="#login" onClick={() => setMenuOpen(false)}>
+                            <a href="/login" onClick={() => setMenuOpen(false)}>
                                 Log in
                             </a>
                         </Button>

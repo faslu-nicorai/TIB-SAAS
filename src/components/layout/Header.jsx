@@ -2,15 +2,19 @@ import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import "./Header.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useSessionContext } from "supertokens-auth-react/recipe/session";
+import Session from "supertokens-auth-react/recipe/session";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [showJoinBtn, setShowJoinBtn] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [isTablet, setIsTablet] = useState(false);
 
     const hamburgerRef = useRef(null);
     const [menuStyle, setMenuStyle] = useState({}); // inline style when anchored on tablet
+
+    const session = useSessionContext();
+    const { doesSessionExist } = session;
 
     useEffect(() => {
         const checkScreenSize = () => {
@@ -23,49 +27,55 @@ const Header = () => {
         return () => window.removeEventListener("resize", checkScreenSize);
     }, []);
 
+
+    const handleLogout = async () => {
+        await Session.signOut();
+        window.location.href = "/login"; // Redirect to login page after logout
+    };
+
     // Position the popover under the hamburger for tablet only
-    useLayoutEffect(() => {
-        // If it's not a tablet, always clear the custom styles.
-        if (!isTablet) {
-            setMenuStyle({});
-            return;
-        }
+    useLayoutEffect(() => {
+        // If it's not a tablet, always clear the custom styles.
+        if (!isTablet) {
+            setMenuStyle({});
+            return;
+        }
 
-        // If it IS a tablet, but the menu is closed or ref is missing,
-        // do nothing. This preserves the style for the exit animation.
-        if (!menuOpen || !hamburgerRef.current) {
-            return;
-        }
+        // If it IS a tablet, but the menu is closed or ref is missing,
+        // do nothing. This preserves the style for the exit animation.
+        if (!menuOpen || !hamburgerRef.current) {
+            return;
+        }
 
-        // If we're here, the menu is open AND it's a tablet.
-        // Calculate and set the position.
-        const updatePosition = () => {
-            // Guard in case ref is lost on resize/scroll
-            if (!hamburgerRef.current) return;
-            
-            const btnRect = hamburgerRef.current.getBoundingClientRect();
-            const desiredWidth = 300; // adjust as needed
-            const left = Math.min(
-                Math.max(8, btnRect.right - desiredWidth + 8),
-                window.innerWidth - desiredWidth - 8
-            );
-            const top = btnRect.bottom + 25; // gap below button
-            setMenuStyle({
-                left: `${Math.round(left)}px`,
-                top: `${Math.round(top)}px`,
-                width: `${desiredWidth}px`,
-            });
-        };
+        // If we're here, the menu is open AND it's a tablet.
+        // Calculate and set the position.
+        const updatePosition = () => {
+            // Guard in case ref is lost on resize/scroll
+            if (!hamburgerRef.current) return;
 
-        updatePosition();
-        window.addEventListener("resize", updatePosition);
-        window.addEventListener("scroll", updatePosition, { passive: true });
+            const btnRect = hamburgerRef.current.getBoundingClientRect();
+            const desiredWidth = 300; // adjust as needed
+            const left = Math.min(
+                Math.max(8, btnRect.right - desiredWidth + 8),
+                window.innerWidth - desiredWidth - 8
+            );
+            const top = btnRect.bottom + 25; // gap below button
+            setMenuStyle({
+                left: `${Math.round(left)}px`,
+                top: `${Math.round(top)}px`,
+                width: `${desiredWidth}px`,
+            });
+        };
 
-        return () => {
-            window.removeEventListener("resize", updatePosition);
-            window.removeEventListener("scroll", updatePosition);
-        };
-    }, [menuOpen, isTablet]); // The dependencies remain the same
+        updatePosition();
+        window.addEventListener("resize", updatePosition);
+        window.addEventListener("scroll", updatePosition, { passive: true });
+
+        return () => {
+            window.removeEventListener("resize", updatePosition);
+            window.removeEventListener("scroll", updatePosition);
+        };
+    }, [menuOpen, isTablet]); // The dependencies remain the same
 
 
     // Show join button when product section scrolls into view (unchanged)
@@ -105,9 +115,17 @@ const Header = () => {
                             <a href="/pricing">Pricing</a>
                         </Button>
 
-                        <Button variant="ghost" asChild>
-                            <a href="/login">Log in</a>
-                        </Button>
+                        {!doesSessionExist && (
+                            <Button variant="ghost" asChild>
+                                <a href="/login">Log in</a>
+                            </Button>
+                        ) || doesSessionExist && (
+                            <Button variant="ghost" asChild className="text-red-500 hover:text-red-600 cursor-pointer">
+                                <a onClick={handleLogout}>Log out</a>
+                            </Button>
+                        )}
+
+
 
                         {/* <AnimatePresence>
                             {showJoinBtn && (
@@ -192,11 +210,18 @@ const Header = () => {
                                 Support
                             </a>
                         </Button>
-                        <Button variant="ghost" asChild>
-                            <a href="/login" onClick={() => setMenuOpen(false)}>
-                                Log in
-                            </a>
-                        </Button>
+
+                        {!doesSessionExist && (
+                            <Button variant="ghost" asChild>
+                                <a href="/login" onClick={() => setMenuOpen(false)}>
+                                    Log in
+                                </a>
+                            </Button>
+                        ) || doesSessionExist && (
+                            <Button variant="ghost" asChild className="text-red-500 hover:text-red-600 cursor-pointer">
+                                <a onClick={handleLogout}>Log out</a>
+                            </Button>
+                        )}
 
                         <Button
                             asChild

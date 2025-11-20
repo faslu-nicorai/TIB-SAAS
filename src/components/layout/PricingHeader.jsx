@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Search, Scan, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/button";
+import { useSessionContext } from "supertokens-auth-react/recipe/session";
+import Session from "supertokens-auth-react/recipe/session";
+
 
 const Logo = () => (
 
@@ -13,6 +16,13 @@ const Logo = () => (
 
 const PricingHeader = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { doesSessionExist } = useSessionContext();
+
+    const handleLogout = async () => {
+        await Session.signOut();
+        window.location.href = "/login"; // Redirect to login page after logout
+    };
+
 
     return (
         <nav className="sticky top-0 z-50 w-full bg-white ">
@@ -43,20 +53,41 @@ const PricingHeader = () => {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                             className="absolute top-[90px] left-0 w-full bg-white z-40 shadow-lg"
                         >
-                            <div className="flex flex-col items-center py-4 gap-3">
-                                <a
-                                    href="#"
-                                    className="text-sm font-medium text-gray-800 hover:text-black py-1"
-                                >
-                                    Log in
-                                </a>
-                                <Button
-                                    type="button"
-                                    className="mt-2 w-11/12 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
-                                >
-                                    Create free account
-                                </Button>
-                            </div>
+                            {!doesSessionExist &&
+                                (
+
+
+                                    <div className="flex flex-col items-center py-4 gap-3">
+                                        <a
+                                            href="#"
+                                            className="text-sm font-medium text-gray-800 hover:text-black py-1"
+                                        >
+                                            Log in
+                                        </a>
+                                        <Button
+                                            type="button"
+                                            className="mt-2 w-11/12 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+                                        >
+                                            Create free account
+                                        </Button>
+                                    </div>
+                                ) || doesSessionExist && (
+
+                                    <div className="flex flex-col items-center py-4 gap-3">
+                                        <Button variant="ghost" asChild className="text-red-500 hover:text-red-600 cursor-pointer">
+                                            <a onClick={handleLogout}>Log out</a>
+                                        </Button>
+
+                                        <Button
+                                            type="button"
+                                            className="mt-2 w-11/12 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+                                        >
+                                            Buy a plan
+                                        </Button>
+                                    </div>
+
+                                )
+                            }
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -73,21 +104,36 @@ const PricingHeader = () => {
 
 
                 {/* Right Section */}
-                <div className="flex items-center gap-6 shrink-0">
+                {!doesSessionExist && (
+                    <div className="flex items-center gap-6 shrink-0">
 
-                    <a
-                        href="#"
-                        className="text-sm font-medium text-[#141414] hover:text-black"
-                    >
-                        Log in
-                    </a>
-                    <Button
-                        type="button"
-                        className="px-4 py-2 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
-                    >
-                        Create free account
-                    </Button>
-                </div>
+                        <a
+                            href="/login"
+                            className="text-sm font-medium text-[#141414] hover:text-black"
+                        >
+                            Log in
+                        </a>
+                        <Button
+                            type="button"
+                            className="px-4 py-2 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+                        >
+                            Create free account
+                        </Button>
+                    </div>
+                ) || doesSessionExist && (
+                    <div className="flex items-center gap-6 shrink-0">
+
+                        <Button variant="ghost" asChild className="text-red-500 hover:text-red-600 cursor-pointer">
+                            <a onClick={handleLogout}>Log out</a>
+                        </Button>
+                        <Button
+                            type="button"
+                            className="px-4 py-2 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+                        >
+                            Pick a plan
+                        </Button>
+                    </div>
+                )}
             </div>
         </nav>
     );

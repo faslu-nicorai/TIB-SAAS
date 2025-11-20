@@ -1,5 +1,6 @@
 // components/pricing-section.tsx
 import React from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -7,8 +8,8 @@ import {
     CardDescription,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card"; // Corrected path
-import { Badge } from "@/components/ui/badge"; // Corrected path
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
     Check,
     Headphones,
@@ -18,11 +19,9 @@ import {
     BarChart2,
     User,
     Shield,
-} from "lucide-react"; // Import all needed icons
-import { PricingToggle } from "@/components/ui/pricingPageUi/pricingToggle"; // Corrected path
+} from "lucide-react";
 
 // --- Updated Plans Array ---
-// The data now matches your image exactly, including icons.
 const plans = [
     {
         name: "Monthly",
@@ -32,8 +31,8 @@ const plans = [
         billing: "per user/month",
         cta: "Get started",
         features: [
-            { text: "All Core Features", icon: Check }, // Renamed for clarity
-            { text: "Priority Support", icon: Headphones }, 
+            { text: "All Core Features", icon: Check },
+            { text: "Priority Support", icon: Headphones },
             { text: "Order & Invoice Management", icon: FileText },
             { text: "Client Database", icon: Users },
             { text: "Analytics Dashboard", icon: BarChart2 },
@@ -44,7 +43,7 @@ const plans = [
     {
         name: "Yearly",
         popular: true,
-        description: "Save over 49%!", // 99*12 = 1188. 599/1188 is ~49.6% savings.
+        description: "Save over 49%!",
         price: "AED 599",
         billing: "per user/year",
         cta: "Get started",
@@ -55,16 +54,25 @@ const plans = [
             { text: "Analytics Dashboard", icon: BarChart2 },
             { text: "Team Roles & Permissions", icon: Shield },
             { text: "Email & Chat Support", icon: MessageSquare },
-            { text: "Priority Support", icon: Headphones }, // Added Priority support as a yearly perk
+            { text: "Priority Support", icon: Headphones },
         ],
     },
 ];
 
-export function PricingSection() {
+export function PricingSection({ onPlanSelect }) {
     return (
         <section className="w-full py-12 md:py-24 lg:py-10 relative z-10 bg-white">
-            <div className="container px-4 md:px-6 mx-auto">
-                {/* Header (Unchanged) */}
+            <motion.div
+                className="container px-4 md:px-6 mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.7,
+                    ease: "easeOut",
+                    delay: 0.4
+                }}
+            >
+                {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-5xl font-extrabold tracking-tight sm:text-6xl mb-4">
                         Grow like a Pro.
@@ -122,25 +130,22 @@ export function PricingSection() {
                                 <Button
                                     className="w-full rounded-full py-6 text-base font-semibold"
                                     size="lg"
-                                    variant={plan.popular ? "default" : "outline"} // 'default' (black) for popular, 'outline' (white) for default
+                                    variant={plan.popular ? "default" : "outline"}
+                                    onClick={() => onPlanSelect && onPlanSelect(plan)}
                                 >
                                     {plan.cta}
                                 </Button>
                                 {/* Features List */}
                                 <ul className="space-y-3 text-left">
                                     {plan.features.map((feature, featureIndex) => {
-                                        const IconComponent = feature.icon; // Get the icon component
+                                        const IconComponent = feature.icon;
                                         return (
                                             <li key={featureIndex} className="flex items-start gap-3">
-                                                {/* Render the icon component if it exists */}
                                                 {IconComponent && (
                                                     <IconComponent className="h-5 w-5 text-gray-500 mt-0.5 flex-shrink-0" />
                                                 )}
-
-                                                {/* Handle the special "...and more" text */}
                                                 <span
                                                     className={`text-sm font-medium ${feature.special ? 'underline cursor-pointer' : ''}`}
-
                                                 >
                                                     {feature.text}
                                                 </span>
@@ -153,7 +158,7 @@ export function PricingSection() {
                         </Card>
                     ))}
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

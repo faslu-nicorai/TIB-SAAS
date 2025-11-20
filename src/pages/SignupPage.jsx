@@ -1,12 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TransformationPanel from '../components/ui/LoginUi/TransformationPanel';
+import { signUp } from "supertokens-auth-react/recipe/emailpassword";
+
+import { useNavigate } from 'react-router-dom';
+import { ArrowLeft, Loader2 } from 'lucide-react';
 
 const SignupPage = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSignup = async (e) => {
+        e.preventDefault();
+        setError(null);
+        setIsLoading(true);
+
+        try {
+            const response = await signUp({
+                formFields: [
+                    { id: "email", value: email },
+                    { id: "password", value: password }
+                ]
+            });
+
+            if (response.status === "OK") {
+                // Signup successful
+                navigate("/"); // Redirect to onboarding or home
+            } else if (response.status === "FIELD_ERROR") {
+                // One of the input fields failed validation
+                response.formFields.forEach(formField => {
+                    if (formField.id === "email") {
+                        setError(formField.error);
+                    } else if (formField.id === "password") {
+                        setError(formField.error);
+                    }
+                });
+            } else {
+                // General error
+                setError("Something went wrong. Please try again.");
+            }
+        } catch (err) {
+            console.error(err);
+            setError("Something went wrong. Please try again.");
+        }
+
+        setIsLoading(false);
+        };
+
     return (
         <div className="flex min-h-screen w-full bg-white font-sans">
             {/* LEFT SIDE - Signup Form */}
-            <div className="flex w-full flex-col justify-center px-8 py-12 md:px-12 lg:w-1/2 lg:px-24 xl:px-32">
-            
+            <div className="flex w-full flex-col justify-center px-8 py-12 md:px-12 lg:w-1/2 lg:px-24 xl:px-32 relative">
+                <button
+                    onClick={() => navigate('/')}
+                    className="absolute top-8 left-8 p-2 rounded-full hover:bg-gray-100 transition-colors group"
+                    aria-label="Back to home"
+                >
+                    <ArrowLeft className="w-6 h-6 text-gray-600 group-hover:text-black transition-colors" />
+                </button>
+
 
                 <div className="mx-auto w-full max-w-md">
                     {/* Logo */}
@@ -19,20 +73,18 @@ const SignupPage = () => {
                     </h2>
 
                     {/* Signup Form */}
-                    <form className="space-y-4">
+                    <form className="space-y-4" onSubmit={handleSignup}>
                         <div className="space-y-4">
-                            {/* Name Input (New) */}
-                            {/* <input
-                                type="text"
-                                placeholder="Full Name"
-                                className="w-full rounded-xl bg-gray-100 px-4 py-4 text-gray-900 placeholder-gray-400 outline-none transition focus:bg-white focus:ring-2 focus:ring-gray-200"
-                            /> */}
+
 
                             {/* Email Input */}
                             <input
                                 type="email"
                                 placeholder="Enter email address"
                                 className="w-full rounded-xl bg-gray-100 px-4 py-4 text-gray-900 placeholder-gray-400 outline-none transition focus:bg-white focus:ring-2 focus:ring-gray-200"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
                             />
 
                             {/* Password Input */}
@@ -40,11 +92,25 @@ const SignupPage = () => {
                                 type="password"
                                 placeholder="Create a password"
                                 className="w-full rounded-xl bg-gray-100 px-4 py-4 text-gray-900 placeholder-gray-400 outline-none transition focus:bg-white focus:ring-2 focus:ring-gray-200"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
                             />
                         </div>
 
-                        <button className="w-full rounded-full bg-black px-4 py-4 font-bold text-white transition hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
-                            Sign up
+                        {error && (
+                            <div className="text-red-500 text-sm text-center">{error}</div>
+                        )}
+
+                        <button
+                            disabled={isLoading}
+                            className="w-full rounded-full bg-black px-4 py-4 font-bold text-white transition hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center"
+                        >
+                            {isLoading ? (
+                                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                            ) : (
+                                "Sign up"
+                            )}
                         </button>
                     </form>
 

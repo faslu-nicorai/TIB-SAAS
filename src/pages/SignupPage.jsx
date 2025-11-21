@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import TransformationPanel from '../components/ui/LoginUi/TransformationPanel';
-import { signUp } from "supertokens-auth-react/recipe/emailpassword";
+import axios from 'axios';
 
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Loader2 } from 'lucide-react';
 
 const SignupPage = () => {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
@@ -18,36 +19,27 @@ const SignupPage = () => {
         setIsLoading(true);
 
         try {
-            const response = await signUp({
-                formFields: [
-                    { id: "email", value: email },
-                    { id: "password", value: password }
-                ]
+            const response = await axios.post('http://localhost:3000/api/auth/signup', {
+                name,
+                email,
+                password
             });
 
-            if (response.status === "OK") {
+            if (response.status === 200 || response.status === 201) {
                 // Signup successful
                 navigate("/"); // Redirect to onboarding or home
-            } else if (response.status === "FIELD_ERROR") {
-                // One of the input fields failed validation
-                response.formFields.forEach(formField => {
-                    if (formField.id === "email") {
-                        setError(formField.error);
-                    } else if (formField.id === "password") {
-                        setError(formField.error);
-                    }
-                });
-            } else {
-                // General error
-                setError("Something went wrong. Please try again.");
             }
         } catch (err) {
             console.error(err);
-            setError("Something went wrong. Please try again.");
+            if (err.response && err.response.data && err.response.data.message) {
+                setError(err.response.data.message);
+            } else {
+                setError("Something went wrong. Please try again.");
+            }
         }
 
         setIsLoading(false);
-        };
+    };
 
     return (
         <div className="flex min-h-screen w-full bg-white font-sans">
@@ -75,6 +67,16 @@ const SignupPage = () => {
                     {/* Signup Form */}
                     <form className="space-y-4" onSubmit={handleSignup}>
                         <div className="space-y-4">
+
+                            {/* User name Input */}
+                            <input
+                                type="text"
+                                placeholder="Enter your name"
+                                className="w-full rounded-xl bg-gray-100 px-4 py-4 text-gray-900 placeholder-gray-400 outline-none transition focus:bg-white focus:ring-2 focus:ring-gray-200"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
 
 
                             {/* Email Input */}
